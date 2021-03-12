@@ -17,9 +17,24 @@ body {
 .section-title--special {
   background: var(--transparentBlue);
   color: var(--mainWhite);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem!important;
   /*styling for title */
   clip-path: polygon(10% 0, 100% 0, 90% 100%,0 100%);
+}
+
+/* preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--mainWhite)!important;
+  z-index: 999;
+}
+
+ .hidePreloader {
+  display: none!important;
 }
 
 /* Navbar */
@@ -128,4 +143,59 @@ body {
 .title-icon:hover {
   color: var(--mainBlue);
   opacity: 0.5;
+}
+
+/* skills & single-skills */
+.skills-icon {
+  font-size: 3rem;
+  color: var(--mainYellow)!important;
+  background: var(--mainGrey)!important;
+}
+
+.skills-icon:hover {
+  color: var(--mainBlue)!important;
+}
+
+.skills-underline {
+  width: 4rem;
+  height: 0.3rem;
+  background: var(--mainBlue)!important;
+  /*center underline*/
+  margin: 1rem auto;
+}
+
+.skills p {
+  color: var(--mainBlack)!important;
+  font-weight: 500!important;
+}
+
+/* Inventory & cars */
+
+.inventory {
+  background: var(--mainGrey)!important;
+}
+
+.car-card {
+  border-radius: 0!important;
+}
+
+/* make the image & card have rounded edges */
+.car-img {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.car-value {
+  background: var(--mainBlue)!important;
+  color: var(--mainWhite)!important;
+  /* clip-path targetting x,y x,y x,y values */
+  clip-path: polygon(15% 0,85% 0,100% 100%,0 100%);
+  transition: all 1s linear; /*all properties */
+}
+
+.car-value:hover {
+  /*gets shape back to a full square
+  clip-path: polygon(0% 0,100% 0,100% 100%,0 100%); */
+  background: var(--mainBlack)!important;
+  cursor: pointer;
 }
