@@ -1,0 +1,131 @@
+:root {
+  --mainBlue: #40ACF1;
+  --transparentBlue: rgba(64, 172, 241, 0.7);
+  --mainWhite: #f1f1f1;
+  --mainBlack: #222;
+  --mainGrey: rgb(216, 214, 214);
+  --mainYellow: #f5ed05;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+}
+
+/*Section title */
+.section-title--special {
+  background: var(--transparentBlue);
+  color: var(--mainWhite);
+  padding: 0.5rem 2rem;
+  /*styling for title */
+  clip-path: polygon(10% 0, 100% 0, 90% 100%,0 100%);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--mainWhite);
+}
+
+.navbar-icon {
+  font-size: 2rem;
+  color: var(--mainBlue);
+}
+
+/*parent element class */
+.navbar-toggler {
+  outline-color: var(--mainYellow)!important;
+  }
+
+  .nav-link {
+    color: #333;
+    text-transform: capitalize;
+  }
+
+  .nav-link:hover {
+    color: var(--mainBlue)!important;
+  }
+
+  .nav-icon {
+    font-size: 1.5rem;
+    color: var(--mainBlue);
+    text-decoration: none!important;
+    /*must call property first of element we want to change, in this case color*/
+    transition-property: color;
+    transition-duration: 1.5s;
+    /* tells how the transition takes place */
+    transition-timing-function: linear; /*linear, transition starts the same way it ends */
+  }
+
+
+.nav-icon:hover {
+  color: var(--mainBlack)!important;
+}
+
+
+/* header */
+
+.header {
+  /*shape of the header/ pointed end using cip-path property*/
+  clip-path: polygon(0 0,100% 0,100% 95%,50% 100%,0 95%);
+  color: var(--mainWhite);
+  overflow: hidden; /* makes sure on image is moving, not entire header*/
+}
+
+.height-max {
+  /*setting a min height helps the image actually span/show properly*/
+  /*calc must be set also because navbar has its own height*/
+  min-height: calc(100vh - 76px);
+  background: url("img/car-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* parallax effect as user scrolls */
+  background-repeat: no-repeat;
+  animation-name: zoom;
+  animation-duration: 20s;
+  animation-delay: 3.5s;
+  animation-iteration-count: infinite;
+}
+
+/*header animation/ zoom in/out */
+@keyframes zoom {
+
+  /*values at 0%, & so on */
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2) translateX(-5%); /*translateX to move on x-axis left/right */
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.title-heading {
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 0.3rem solid var(--mainBlue);
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.9rem;
+}
+
+@media screen and (min-width:760px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.title-icon {
+  color: var(--mainBlue)!important;
+  text-decoration: none!important;
+}
+
+.title-icon:hover {
+  color: var(--mainBlue);
+  opacity: 0.5;
+}
