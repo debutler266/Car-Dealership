@@ -199,3 +199,33 @@ body {
   background: var(--mainBlack)!important;
   cursor: pointer;
 }
+
+/* Questions/ Inquiry */
+
+.question {
+  background: url('img/question-bg.jpg')center/cover fixed no-repeat;
+}
+
+.question-grey {
+  background: rgba(79, 109, 122, 0.75);
+}
+
+.question-yellow {
+  background: rgba(227, 181, 5, 0.75);
+}
+
+.question-icon {
+  font-size: 4rem;
+  color: var(--mainBlue)!important;
+  transition: all 0.4s ease-in-out;
+}
+
+.question-icon:hover {
+  /* lift UP animation */
+  transform: translateY(-10%);
+  color: var(--mainBlue)!important;
+}
+
+.question-info {
+  color: var(--mainWhite)!important;
+}
