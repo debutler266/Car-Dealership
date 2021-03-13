@@ -229,3 +229,83 @@ body {
 .question-info {
   color: var(--mainWhite)!important;
 }
+
+/* Featured Section */
+
+.featured {
+  background: var(--mainGrey)!important
+}
+
+.featured-item {
+  background: var(--mainWhite)!important;
+  border-radius: 0.5rem;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+
+.featured-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.featured-icon {
+  font-size: 1.5rem;
+  color: var(--mainYellow)!important;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.featured-icon:hover {
+  color: var(--mainBlue)!important;
+}
+
+.img-container {
+  background: var(--mainBlue)!important;
+  position: relative;
+  /* keeps the zoom in effect within the container, so it doesn't expand too wide */
+  overflow: hidden;
+}
+
+.img-container:hover .featured-photo {
+  transform: scale(1.4);
+  opacity: 0.5;
+}
+
+.featured-photo {
+  transition: all 1s ease-in-out;
+}
+
+.featured-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2.5rem;
+  /*making sure icon is placed in the center */
+  transform: translate(-50%, -50%);
+  color: var(--mainBlack)!important;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.featured-link:hover {
+  color: var(--mainYellow)!important;
+}
+
+.img-container:hover .featured-link {
+  opacity: 1;
+}
+
+/* footer icons */
+.footer {
+  background: var(--mainBlack)!important;
+}
+
+.footer-icon {
+  font-size: 1.3rem;
+  color: var(--mainYellow)!important;
+  transition: all 1s ease-in-out;
+}
+.footer-icon:hover {
+color: var(--mainBlue)!important;
+}
