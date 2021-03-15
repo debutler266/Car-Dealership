@@ -122,6 +122,91 @@ const DisplaySpecialCars = ((CreateCars) => {
 })(CreateCars);
 
 
+//New module to display all cars/american/german cars in car inventory section accordingly
+const DisplayCars = ((CreateCars) => {
+  //})(CreateCars);
+  //all cars in inventory section
+  const cars = CreateCars.cars;
+  //parent container containing cars from the inventory (inventory,row, buttons)
+  const inventory = document.querySelector('.inventory-container');
+  //loop through cars using forEach & display cars on the document/website
+  document.addEventListener('DOMContentLoaded', () => {
+    inventory.innerHTML = '';
+
+    let output = '';
+    cars.forEach((car) => {
+      output += `<div class="col-10 mx-auto my-3 col-md-6 col-lg-4 single-car ${car.country}">
+          <div class="card car-card">
+            <img src="${car.img}" class="card-img-top car-img" alt="">
+            <!-- Card Body -->
+            <div class="card-body">
+              <div class="car-info d-flex justify-content-between">
+                  <!-- 1st flex child -->
+                  <div class="car-text text-uppercase">
+                    <h6 class="font-weight-bold">${car.make}</h6>
+                    <h6>${car.model}</h6>
+                  </div>
+                  <!-- 2nd flex child -->
+                  <h5 class="car-value align-self-center py-2 px-3">$
+                  <span class="car-price">${car.price}</span>
+                  </h5>
+              </div>
+            </div>
+            <!-- end of car card -->
+            <div class="card-footer text-capitalize d-flex justify-content-between">
+              <p><span><i class="fas fa-car"></i></span> ${car.type}</p>
+              <p><span><i class="fas fa-cogs"></i></span> ${car.trans}</p>
+              <p><span><i class="fas fa-gas-pump"></i></span> ${car.gas}</p>
+            </div>
+          </div>
+        </div>`
+    })
+
+  inventory.innerHTML = output;
+
+
+  })
+
+
+})(CreateCars);
+
+//filter cars with button/ data-filter
+//immediately invoked function (reminder)
+const FilterCars = (() => {
+  const filter = document.querySelectorAll('.filter-btn');
+  //console.log(filter); (shows nodelist of buttons)
+
+  //loop over each button, add event listener, listen for click (e)/event, grab value for data-filter for each button
+  filter.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const value = event.target.dataset.filter;
+      // console.log(value); (gives each button value when clicked)
+      //show each car in a nodelist by getting the '.single-car' value
+      const singleCar = document.querySelectorAll('.single-car');
+      //(nodelist) console.log(singleCar);
+
+      //loop through nodelist of cars once button is clicked
+      singleCar.forEach(car => {
+        if(value === 'all'){
+          car.style.display = 'block';
+        }
+        else{
+          //turnery operator** if a car does not have selected button class, hide those cars
+          (!car.classList.contains(value)) ? car.style.display = 'none' :
+          car.style.display = 'block';
+        }
+      })
+
+    })
+  })
+
+
+
+})();
+
+//show modal
+
+
 
 //invoked function expression
 

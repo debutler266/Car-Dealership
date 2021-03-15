@@ -175,6 +175,10 @@ body {
   background: var(--mainGrey)!important;
 }
 
+.review {
+  background: var(--mainWhite)!important;
+}
+
 .car-card {
   border-radius: 0!important;
 }
