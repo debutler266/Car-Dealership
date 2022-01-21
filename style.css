@@ -313,3 +313,11 @@ body {
 .footer-icon:hover {
 color: var(--mainBlue)!important;
 }
+
+
+@media screen and (max-width: 425px) {
+  .height-max {
+    background-position: center;
+    background-attachment: scroll;
+  }
+}
